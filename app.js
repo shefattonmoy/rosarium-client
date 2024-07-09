@@ -24,7 +24,7 @@ const displayService = (services) => {
                   <p class="card-text">
                     ${service.description}
                   </p>
-                  <a href="#" class="btn btn-primary">Details</a>
+                  <a href="#" class="btn btn-primary">Learn More</a>
                 </div>
               </div>
     `;
@@ -32,18 +32,21 @@ const displayService = (services) => {
   });
 };
 
-const loadAllProducts = (search) => {
+const loadAllProducts = (search = "", category = "") => {
   document.getElementById("all-products").innerHTML = "";
   document.getElementById("spinner").style.display = "block";
   console.log(search);
-  fetch(`https://rosarium-server.onrender.com/all_products/list/?search=${search ? search : ""}`)
+  fetch(
+    `https://rosarium-server.onrender.com/all_products/list/?search=${
+      search ? search : ""
+    }`
+  )
     .then((res) => res.json())
     .then((data) => {
-      console.log(data.results);
       displayAllProducts(data?.results);
     })
     .catch((error) => {
-      console.error('Error fetching products:', error);
+      console.error("Error fetching products:", error);
       if (data.results.length > 0) {
         document.getElementById("spinner").style.display = "none";
         document.getElementById("nodata").style.display = "none";
@@ -58,10 +61,15 @@ const loadAllProducts = (search) => {
 
 const displayAllProducts = (allProducts) => {
   const parent = document.getElementById("all-products");
-  parent.innerHTML = '';
+  parent.innerHTML = "";
 
   if (!allProducts || allProducts.length === 0) {
     console.log('No products found');
+    return;
+  }
+
+  if (!allProducts || allProducts.length === 0) {
+    console.log("No products found");
     return;
   }
 
@@ -87,7 +95,7 @@ const displayAllProducts = (allProducts) => {
           </p>
           <p class="card-text fw-semibold"> Price: $${product.price}
           </p>
-          <a href="#" class="btn btn-primary">Buy Now</a>
+          <button class="btn btn-primary"><a href="allProductsDetails.html?productId=${product.id}" target="_blank" class="text-white">Details</a></button>
         </div>
       </div>
     `;
@@ -97,42 +105,89 @@ const displayAllProducts = (allProducts) => {
 
 const loadCategories = () => {
   fetch("https://rosarium-server.onrender.com/all_products/category/")
-  .then((res) => res.json())
-  .then((data) => {
-    data.forEach((category) => {
-      const parent = document.getElementById("category-filter");
-      const option = document.createElement("option");
-      option.classList.add("category-filter-element");
-      option.innerText = category?.name;
-      parent.appendChild(option);
-    })
-  });
+    .then((res) => res.json())
+    .then((data) => {
+      const categorySelect = document.getElementById("category-filter");
+      categorySelect.innerHTML = '<option value="">All Categories</option>';
+      data.forEach((category) => {
+        const option = document.createElement("option");
+        option.classList.add("category-filter-element");
+        option.value = category?.name;
+        option.innerText = category?.name;
+        categorySelect.appendChild(option);
+      });
+    });
 };
 
 const loadColors = () => {
   fetch("https://rosarium-server.onrender.com/all_products/color/")
-  .then((res) => res.json())
-  .then((data) => {
-    data.forEach((color) => {
-      const parent = document.getElementById("color-filter");
-      const option = document.createElement("option");
-      option.classList.add("color-filter-element");
-      option.innerHTML = `
+    .then((res) => res.json())
+    .then((data) => {
+      data.forEach((color) => {
+        const parent = document.getElementById("color-filter");
+        const option = document.createElement("option");
+        option.classList.add("color-filter-element");
+        option.innerHTML = `
       <option onclick="loadAllProducts('${color.name})">${color.name}</option>
-      `
-      parent.appendChild(option);
-    })
-  });
+      `;
+        parent.appendChild(option);
+      });
+    });
 };
 
 const handleSearch = () => {
   const value = document.getElementById("search").value;
-  loadAllProducts(value);
+  const category = document.getElementById("category-filter").value;
+  loadAllProducts(value, category);
   console.log("Searched value", value);
+};
+
+const handleCategoryFilter = () => {
+  const category = document.getElementById("category-filter").value;
+  const search = document.getElementById("search").value;
+  loadAllProducts(search, category);
+};
+
+const loadReviews = () => {
+  fetch("https://rosarium-server.onrender.com/all_products/reviews/")
+  .then(res => res.json())
+  .then(data => displayReviews(data));
 }
 
+const displayReviews = (reviews) => {
+  reviews.forEach((review) => {
+    const parent = document.getElementById("review-container");
+    const li = document.createElement("li");
+    li.classList.add("slide-visible");
+    li.innerHTML = `
+    <div class="card shadow h-100">
+                <div class="ratio ratio-4x3">
+                  <img
+                    src=${review.reviewer_image}
+                    class="card-img"
+                    loading="lazy"
+                    alt="..."
+                  />
+                </div>
+                <div class="card-body p-3 p-xl-5">
+                  <h3 class="card-title h5">${review.reviewer_name}</h3>
+                  <p class="card-text">
+                    ${review.body}
+                  </p>
+                  <p class="card-text">
+                    ${review.rating}
+                  </p>
+                  <p class="card-text">
+                    ${review.created}
+                  </p>
+              </div>
+    `;
+    parent.appendChild(li);
+  })
+}
 
 loadServices();
 loadAllProducts();
 loadCategories();
 loadColors();
+loadReviews();

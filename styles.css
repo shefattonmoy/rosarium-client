@@ -41,9 +41,9 @@ nav{
     text-align:center;
     padding: 15px;
 }
-.product-img{
-    width: 100px;
-    height: 100px;
+.product-img img{
+    width: 250px;
+    height: 250px;
     border-radius: 50px;
 }
 
@@ -73,7 +73,8 @@ nav{
 
 footer{
     padding: 50px;
- background: linear-gradient(66deg, #1CA8C7 -5.25%, #439FA5 46.76%, #4C7D8C 98.77%);;
+    background: #04444E;
+    color: #fff;
 }
 
 .doctor-img img{
@@ -81,7 +82,7 @@ width: 150px;
 height: 150px;
 border-radius: 100px;
 }
-.doc-details-container{
+.all-product-details-container{
     display: flex;
     justify-content: space-around;
     padding: 30px;
@@ -89,7 +90,7 @@ border-radius: 100px;
     width: 75%;
     margin: auto;
 }
-.doc-detail-btn{
+.all-product-detail-btn{
     border: none;
     padding:5px 10px;
     background-color:gray;
@@ -113,7 +114,7 @@ border-radius:100px;
     align-items: center;
     gap: 50px;
 }
-.all-appointment-container{
+.all-order-container{
     width: 90%;
     margin: auto;
     height: 100vh;
