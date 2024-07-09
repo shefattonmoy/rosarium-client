@@ -24,8 +24,27 @@
         <li class="menu">Services</li>
         <li class="menu">Contact us</li>
         <li class="menu"><a target="_blank" href="login.html">Login</a></li>
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2"
+            data-bs-toggle="dropdown" aria-expanded="false">
+            Profile
+          </button>
+          <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
+            <li>
+              <a class="dropdown-item active" href="userDetails.html">Profile</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="orders.html">Orders</a>
+            </li>
+            <li onclick="handleLogOut()">
+              <a class="dropdown-item">Logout</a>
+            </li>
+          </ul>
+        </div>
       </div>
     </nav>
+
+
 
     <!-- Banner Section -->
     <div id="carouselExampleCaptions" class="carousel slide">
@@ -152,7 +171,9 @@
 
     <div class="container p-3 mt-5">
       <h1 class="title pb-2">What Our Clients Say About Us</h1>
-      <p class="title text-center fs-5">Engage with us to praise our stunning floral arrangements, reliable delivery, <br> and excellent customer service, making every occasion special and memorable.</p>
+      <p class="title text-center fs-5">Engage with us to praise our stunning floral arrangements, reliable delivery,
+        <br> and excellent customer service, making every occasion special and memorable.
+      </p>
       <div
         class="swiffy-slider slider-item-show2 slider-item-reveal slider-nav-outside slider-nav-round slider-nav-visible slider-indicators-outside slider-indicators-round slider-indicators-dark slider-nav-animation slider-nav-animation-fadein slider-item-first-visible">
         <ul id="review-container" class="slider-container py-4"></ul>
@@ -175,7 +196,7 @@
   <footer class="p-5">
     <div class="container w-75 m-auto row p-5">
       <div class="col-md-6">
-        <p><small>Copyright © Smartcare. All Rights Reserved</small></p>
+        <p><small>Copyright © Rosarium. All Rights Reserved</small></p>
         <h5>Follow US</h5>
         <div class="icons">
           <img class="icon" src="./images/LinkedIn.png" alt="" />
@@ -205,6 +226,8 @@
 
   <script src="./app.js"></script>
   <script src="./allProductsDetails.js"></script>
+  <script src="./logout.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
     integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
     crossorigin="anonymous"></script>

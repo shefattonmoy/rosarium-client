@@ -48,6 +48,7 @@ const handleOrder = () => {
     const address = document.getElementById("address").value;
     const time = document.getElementById("time");
     const selectedTime = time.options[time.selectedIndex];
+    const customer_id = localStorage.getItem("customer_id");
 
     if (!selected || !selectedTime) {
         console.error("Delivery option or time not selected");
@@ -60,13 +61,13 @@ const handleOrder = () => {
         time: selectedTime.value,
         address: address,
         cancel: false,
-        customer: customerId,
+        customer: customer_id,
         product: param,
       };
 
       fetch("https://rosarium-server.onrender.com/orders/", {
         method: "POST",
-        headers: {"Content-Type": "application/json"},
+        headers: {"content-type": "application/json"},
         body: JSON.stringify(info),
       })
       .then(res => res.json())
@@ -75,4 +76,15 @@ const handleOrder = () => {
       })
 }
 
+const loadCustomerId = () => {
+  const user_id = localStorage.getItem("user_id");
+  fetch(`https://rosarium-server.onrender.com/customer/list/?user_id=${user_id}`)
+  .then(res => res.json())
+  .then(data => {
+    localStorage.setItem("customer_id", data[0].id);
+  })
+}
+
 getParams();
+loadTime();
+loadCustomerId();

@@ -5,10 +5,15 @@ body{
 li{
     list-style: none;
 }
-nav{
+/* nav{
     background-color: #f7cac9;
     opacity: 0.7;
+} */
+
+nav {
+    background-color: #f7cac9 /* Use rgba for semi-transparency */
 }
+
 .menu{
     font-size: 20px;
 }
@@ -21,13 +26,11 @@ nav{
     width: 1200px;
     margin: auto;
     margin-top: 50px;
-    
 }
 .title{
     font-size: 44px;
     color: #04444E;
     text-align: center;
-
 }
 .filter-container{
     margin-top: 50px;
@@ -97,12 +100,12 @@ border-radius: 100px;
     color: white;
     border-radius: 5px;
 }
-
-.user-detais-container{
+.user-details-container{
     height: 100vh;
     width: 75%;
     margin: auto;
 }
+
 .user-img img{
 width: 200px;
 height: 200px;
@@ -114,7 +117,7 @@ border-radius:100px;
     align-items: center;
     gap: 50px;
 }
-.all-order-container{
+.orders-container{
     width: 90%;
     margin: auto;
     height: 100vh;
