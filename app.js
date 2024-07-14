@@ -186,6 +186,51 @@ const displayReviews = (reviews) => {
   })
 }
 
+document.addEventListener('DOMContentLoaded', () => {
+  const profileLink = document.getElementById('profile-link');
+  const loginLink = document.getElementById('login-link');
+  const logoutLink = document.getElementById('logout-link');
+
+  function isLoggedIn() {
+      return localStorage.getItem('isLoggedIn') === 'true';
+  }
+
+  function toggleLinks() {
+      if (isLoggedIn()) {
+          profileLink.style.display = 'block';
+          logoutLink.style.display = 'block';
+          loginLink.style.display = 'none';
+      } else {
+          profileLink.style.display = 'none';
+          logoutLink.style.display = 'none';
+          loginLink.style.display = 'block';
+      }
+  }
+
+  toggleLinks();
+
+  function handleLogin(event) {
+      event.preventDefault();
+      localStorage.setItem('isLoggedIn', 'true');
+      toggleLinks();
+  }
+
+  function handleLogout(event) {
+      event.preventDefault();
+      localStorage.setItem('isLoggedIn', 'false');
+      toggleLinks();
+  }
+
+  const loginButton = document.querySelector('.submit-btn');
+  if (loginButton) {
+      loginButton.addEventListener('click', handleLogin);
+  }
+
+  logoutLink.addEventListener('click', handleLogout);
+});
+
+
+
 loadServices();
 loadAllProducts();
 loadCategories();

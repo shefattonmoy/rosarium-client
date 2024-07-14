@@ -1,16 +1,19 @@
-body{
-    background-color:white;
+body {
+    background-color: white;
 }
-.login-container{
-    height:100vh;
+
+.login-container {
+    height: 100vh;
     display: flex;
     justify-content: center;
     gap: 20px;
-    align-items:center;
-    width:75%;
+    align-items: center;
+    width: 75%;
     margin: auto;
+    flex-direction: column;
 }
-.input{
+
+.input {
     padding: 10px 20px;
     width: 85%;
     border: none;
@@ -18,13 +21,47 @@ body{
     box-shadow: 4px 4px 8px gray;
     border-radius: 5px;
 }
-.submit-btn{
+
+.submit-btn {
     padding: 10px 20px;
-    width:85%;
+    width: 85%;
     margin: auto;
     border: none;
     background-color: rgb(43, 121, 121);
     color: white;
     font-size: 20px;
     border-radius: 10px;
+}
+
+/* Responsive Styles */
+
+@media (max-width: 1200px) {
+    .login-container {
+        width: 90%;
+    }
+}
+
+@media (max-width: 768px) {
+    .login-container {
+        width: 100%;
+    }
+
+    .input {
+        width: 90%;
+    }
+
+    .submit-btn {
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .input {
+        padding: 8px 16px;
+    }
+
+    .submit-btn {
+        padding: 8px 16px;
+        font-size: 18px;
+    }
 }
