@@ -1,5 +1,7 @@
 const loadServices = () => {
-  fetch("https://rosarium-server.onrender.com/featured_products/")
+  fetch("https://rosarium-server.onrender.com/featured_products/", {
+    mode: 'no-cors',
+  })
     .then((res) => res.json())
     .then((data) => displayService(data));
 };
@@ -39,7 +41,9 @@ const loadAllProducts = (search = "", category = "") => {
   fetch(
     `https://rosarium-server.onrender.com/all_products/list/?search=${
       search ? search : ""
-    }`
+    }`, {
+      mode: 'no-cors',
+    }
   )
     .then((res) => res.json())
     .then((data) => {
@@ -104,7 +108,9 @@ const displayAllProducts = (allProducts) => {
 };
 
 const loadCategories = () => {
-  fetch("https://rosarium-server.onrender.com/all_products/category/")
+  fetch("https://rosarium-server.onrender.com/all_products/category/", {
+    mode: 'no-cors',
+  })
     .then((res) => res.json())
     .then((data) => {
       const categorySelect = document.getElementById("category-filter");
@@ -120,7 +126,11 @@ const loadCategories = () => {
 };
 
 const loadColors = () => {
-  fetch("https://rosarium-server.onrender.com/all_products/color/")
+  fetch("https://rosarium-server.onrender.com/all_products/color/", 
+    {
+      mode: 'no-cors',
+    }
+  )
     .then((res) => res.json())
     .then((data) => {
       data.forEach((color) => {
@@ -149,7 +159,9 @@ const handleCategoryFilter = () => {
 };
 
 const loadReviews = () => {
-  fetch("https://rosarium-server.onrender.com/all_products/reviews/")
+  fetch("https://rosarium-server.onrender.com/all_products/reviews/", {
+    mode: 'no-cors',
+  })
   .then(res => res.json())
   .then(data => displayReviews(data));
 }

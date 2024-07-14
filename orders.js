@@ -1,6 +1,8 @@
 loadOrders = () => {
     const customer_id = localStorage.getItem("customer_id");
-    fetch(`https://rosarium-server.onrender.com/orders/?=${customer_id}`)
+    fetch(`https://rosarium-server.onrender.com/orders/?=${customer_id}`, {
+        mode: 'no-cors',
+    })
     .then(res => res.json())
     .then(data => {
         data.forEach((item) => {
