@@ -22,10 +22,7 @@ const handleRegistration = (event) => {
         password
       )
     ) {
-      fetch("https://rosarium-server.onrender.com/customer/register/",
-        {
-          mode: 'no-cors',
-        }, {
+      fetch("https://rosarium-server.onrender.com/customer/register/",{
         method: "POST",
         headers: { "content-type": "application/json" },
         body: JSON.stringify(info),
@@ -55,9 +52,6 @@ const handleLogin = (event) => {
   console.log(username, password);
   if ((username, password)) {
     fetch("https://rosarium-server.onrender.com/customer/login/",
-      {
-        mode: 'no-cors',
-      },
        {
       method: "POST",
       headers: { "content-type": "application/json" },

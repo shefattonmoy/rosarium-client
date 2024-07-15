@@ -1,8 +1,6 @@
 const loadUserDetails = () => {
     const user_id = localStorage.getItem('user_id')
-    fetch(`https://rosarium-server.onrender.com/all_products/list/${user_id}`, {
-      mode: 'no-cors',
-    })
+    fetch(`https://rosarium-server.onrender.com/all_products/list/${user_id}`)
     .then(res => res.json())
     .then(data => {
         const parent = document.getElementById("user-details-container");

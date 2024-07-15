@@ -1,10 +1,7 @@
 const getParams = () => {
     const param = new URLSearchParams(window.location.search).get("productId");
     loadTime(param);
-    fetch(`https://rosarium-server.onrender.com/all_products/list/${param}`),
-    {
-      mode: 'no-cors',
-    }
+    fetch(`https://rosarium-server.onrender.com/all_products/list/${param}`)
     .then(res => res.json())
     .then(data => displayDetails(data));
 };
@@ -30,10 +27,7 @@ const displayDetails = (product) => {
 
 const loadTime = (id) => {
     fetch(
-      `https://rosarium-server.onrender.com/all_products/receiving_time/?productId=${id}`,
-      {
-        mode: 'no-cors',
-      }
+      `https://rosarium-server.onrender.com/all_products/receiving_time/?productId=${id}`
     )
       .then((res) => res.json())
       .then((data) => {
@@ -71,10 +65,7 @@ const handleOrder = () => {
         product: param,
       };
 
-      fetch("https://rosarium-server.onrender.com/orders/",
-        {
-          mode: 'no-cors',
-        }, {
+      fetch("https://rosarium-server.onrender.com/orders/", {
         method: "POST",
         headers: {"content-type": "application/json"},
         body: JSON.stringify(info),
@@ -87,9 +78,7 @@ const handleOrder = () => {
 
 const loadCustomerId = () => {
   const user_id = localStorage.getItem("user_id");
-  fetch(`https://rosarium-server.onrender.com/customer/list/?user_id=${user_id}`, {
-    mode: 'no-cors',
-  })
+  fetch(`https://rosarium-server.onrender.com/customer/list/?user_id=${user_id}`)
   .then(res => res.json())
   .then(data => {
     localStorage.setItem("customer_id", data[0].id);

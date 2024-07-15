@@ -2,8 +2,6 @@ const handleLogOut = () => {
     const token = localStorage.getItem("token");
   
     fetch("https://rosarium-server.onrender.com/customer/logout", {
-      mode: 'no-cors',
-    }, {
       method: "POST",
       headers: {
         Authorization: `Token ${token}`,
