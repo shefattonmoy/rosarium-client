@@ -1,6 +1,6 @@
 body {
     margin: auto;
-    background-color: rgb(241, 234, 234);
+    background-color: #FFF;
 }
 
 li {
@@ -8,7 +8,7 @@ li {
 }
 
 nav {
-    background-color: #f7cac9; 
+    background-color: #878281;
 }
 
 .menu {
@@ -31,6 +31,12 @@ nav {
     font-size: 44px;
     color: #04444E;
     text-align: center;
+}
+
+.newsletter-title {
+    font-size: 44px;
+    color: #04444E;
+    text-align: left;
 }
 
 .filter-container {
@@ -87,12 +93,6 @@ nav {
     border-radius: 50px;
 }
 
-footer {
-    padding: 50px;
-    background: #04444E;
-    color: #fff;
-}
-
 .all-product-details-container {
     display: flex;
     flex-wrap: wrap;
@@ -110,6 +110,11 @@ footer {
     background-color: gray;
     color: white;
     border-radius: 5px;
+}
+
+.col-custom {
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 .user-details-container {
@@ -137,6 +142,13 @@ footer {
     width: 90%;
     margin: auto;
     height: auto;
+}
+
+
+footer {
+    padding: 50px;
+    background: #04444E;
+    color: #fff;
 }
 
 @media screen and (orientation: landscape) {

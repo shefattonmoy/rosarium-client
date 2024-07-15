@@ -14,20 +14,20 @@
 <body>
   <header>
     <!-- Navbar Section -->
-<nav class="d-flex justify-content-around align-items-center p-2">
-  <div class="logo-container d-flex align-items-center gap-2">
-      <img src="./images/small_logo.png" alt="" />
-      <h3>Rosarium</h3>
-  </div>
-  <div class="menu-container d-flex gap-3">
-      <li class="menu"><a href="index.html">Home</a></li>
-      <li class="menu">Services</li>
-      <li class="menu">Contact us</li>
-      <li class="menu" id="login-link"><a target="_blank" href="login.html">Login</a></li>
-      <li class="menu" id="profile-link" style="display: none;"><a href="profile.html">Profile</a></li>
-      <li class="menu" id="logout-link" style="display: none;"><a href="#">Logout</a></li>
-  </div>
-</nav>
+    <nav class="d-flex justify-content-around align-items-center p-2">
+      <div class="logo-container d-flex align-items-center gap-2">
+        <img src="./images/small_logo.png" alt="" />
+        <h3>Rosarium</h3>
+      </div>
+      <div class="menu-container d-flex gap-3">
+        <li class="menu"><a href="index.html">Home</a></li>
+        <li class="menu">Services</li>
+        <li class="menu">Contact us</li>
+        <li class="menu" id="login-link"><a target="_blank" href="login.html">Login</a></li>
+        <li class="menu" id="profile-link" style="display: none;"><a href="profile.html">Profile</a></li>
+        <li class="menu" id="logout-link" style="display: none;"><a href="#">Logout</a></li>
+      </div>
+    </nav>
 
 
 
@@ -44,41 +44,43 @@
       </div>
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img src="./images/carousel_3.jpg" class="d-block w-100" alt="...">
+          <img src="./images/carousel_1.jpg" class="d-block w-100">
           <div class="carousel-caption d-flex flex-column h-100 align-items-center justify-content-center bottom-0">
-            <h1 class="bg-opacity-50 p-2"> <span style="color: #FFF6E7
-;font-size: 60px; text-align: center;">Welcome</span> to <span style="font-size:60px; text-align: center; color: #FFF6E7
+            <h1 class="bg-opacity-50 p-2"> <span style="color: #000
+;font-size: 60px; text-align: center;">Welcome to </span><span style="font-size:60px; text-align: center; color: #000
 ;">Rosarium</span></h1>
-            <p class="bg-opacity-50 p-2 fs-5">Wedding Flowers</span> Tailored to Your Style</p>
+            <p class="bg-opacity-50 p-2 fs-5 text-black">Wedding Flowers</span> Tailored to Your Style</p>
           </div>
         </div>
         <div class="carousel-item">
-          <img src="./images/carousel_2.jpg" class="d-block w-100" alt="...">
+          <img src="./images/carousel_2.jpg" class="d-block w-100">
           <div class="carousel-caption d-flex flex-column h-100 align-items-center justify-content-center bottom-0">
-            <h1 class="bg-opacity-50 p-2"><span style="color: #FFF4E1">Shop</span> <span style="font-size: 60px; text-align: center; color: #04444E
-;">Flowers</span> for <span style="color: #FFF4E1;">Every</span> <span style="font-size:60px; text-align: center; color: #04444E
+            <h1 class="bg-opacity-50 p-2"><span style="color: #04444E">Shop</span> <span style="font-size: 60px; text-align: center; color: #04444E
+;">Flowers</span> <span style="color: #04444E;">for Every</span> <span style="font-size:60px; text-align: center; color: #04444E
 ;">Occasion</span></h1>
-            <p class="bg-opacity-50 p-2 fs-5">Perfect Gifts for Birthdays & Anniversaries</p>
+            <p class="bg-opacity-50 p-2 fs-5"><span style="color:#04444E;">Perfect Gifts for Birthdays &
+                Anniversaries</span></p>
           </div>
         </div>
         <div class="carousel-item">
-          <img src="./images/carousel_1.jpg" class="d-block w-100" alt="...">
+          <img src="./images/carousel_3.jpg" class="d-block w-100">
           <div class="carousel-caption d-flex flex-column h-100 align-items-center justify-content-center bottom-0">
             <h1 class="bg-opacity-50 p-2"><span style="font-size: 60px; text-align: center; color: #CC0000
-;">Exotic</span> and <span style="font-size: 60px; text-align: center; color: #CC0000
-">Rare</span> <span style="color: #FFF6E7;">Flower Varieties</span></h1>
-            <p class="bg-opacity-50 p-2 fs-5">Personalized Selections Based on Preferences</p>
+;">Exotic</span> <span style="color: #000;">and</span> <span style="font-size: 60px; text-align: center; color: #CC0000
+">Rare</span> <span style="color: #000;">Flower Varieties</span></h1>
+            <p class="bg-opacity-50 p-2 fs-5"><span style="color: #CC0000;">Personalized Selections Based on
+                Preferences</span></p>
           </div>
         </div>
       </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
         data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="carousel-control-prev-icon bg-black" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
       </button>
       <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
         data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="carousel-control-next-icon bg-black" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
       </button>
     </div>
@@ -176,10 +178,23 @@
         </div>
       </div>
     </div>
+
+    <div class="container d-flex mt-5">
+      <div class="col-md-8">
+        <h1 class="newsletter-title pb-2">Send Newsletter</h1>
+        <p class="newsletter-title fs-6">Enter Your Email Address For Our Mailing List To Keep Yourself Update</p>
+      </div>
+      <div class="mb-3 col-md-4">
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="Email" aria-label="Recipient's username" aria-describedby="button-addon2">
+          <button class="btn btn-primary" type="button" id="button-addon2">Subscribe</button>
+        </div>
+      </div>
+    </div>
   </main>
 
   <!-- Footer Section -->
-  <footer class="p-5">
+  <footer class="p-5 mt-5">
     <div class="container w-75 m-auto row p-5">
       <div class="col-md-6">
         <p><small>Copyright © Rosarium. All Rights Reserved</small></p>
