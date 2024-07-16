@@ -1,5 +1,52 @@
-body {
-    background-color: white;
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    background: #f0f0f0;
+    position: relative;
+    text-align: center;
+}
+
+.banner::before, .banner::after {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 150px;
+    background-size: cover;
+    background-position: center;
+}
+
+.banner::before {
+    left: 0;
+    background-image: url('./images/carousel_2.jpg');
+}
+
+.banner::after {
+    right: 0;
+    background-image: url('./images/carousel_2.jpg');
+}
+
+.content {
+    z-index: 1;
+    max-width: 80%;
+}
+
+h1 {
+    font-family: 'Brush Script MT', cursive;
+    font-size: 36px;
+    margin: 0;
+}
+
+p {
+    margin: 5px 0 0;
+    font-size: 18px;
 }
 
 .login-container {

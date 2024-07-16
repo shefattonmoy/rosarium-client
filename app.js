@@ -90,7 +90,7 @@ const displayAllProducts = (allProducts) => {
           </p>
           <p class="card-text fw-semibold"> Price: $${product.price}
           </p>
-          <button class="btn btn-primary"><a href="allProductsDetails.html?productId=${product.id}" class="text-white">Details</a></button>
+          <button class="btn btn-primary" style="padding: 5px 15px; background-color: #007bff; border: none; border-radius: 4px;"><a href="allProductsDetails.html?productId=${product.id}" class="text-white" style="color: white; text-decoration: none; display: block; width: 100%; height: 100%; text-align: center;">Details</a></button>
         </div>
       </div>
     `;
