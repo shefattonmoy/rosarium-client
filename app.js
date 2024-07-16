@@ -68,11 +68,6 @@ const displayAllProducts = (allProducts) => {
     return;
   }
 
-  if (!allProducts || allProducts.length === 0) {
-    console.log("No products found");
-    return;
-  }
-
   allProducts.forEach((product) => {
     const div = document.createElement("div");
     div.classList.add("col-md-4", "mb-4");
@@ -102,6 +97,26 @@ const displayAllProducts = (allProducts) => {
     parent.appendChild(div);
   });
 };
+
+const showAllProducts = async () => {
+  try {
+    const response = await fetch(`http://rosarium-server.onrender.com/all_products/list`, {mode: 'no-cors',});
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    const allProducts = await response.json();
+    displayAllProducts(allProducts);
+
+    const showAllButton = document.getElementById('showAllButton');
+    showAllButton.style.display = 'none';
+  } catch (error) {
+    console.error('Error fetching products:', error);
+  }
+};
+
+document.addEventListener('DOMContentLoaded', () => {
+  showAllProducts();
+});
 
 const loadCategories = () => {
   fetch("https://rosarium-server.onrender.com/all_products/category/")
@@ -229,8 +244,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   logoutLink.addEventListener('click', handleLogout);
 });
-
-
 
 loadServices();
 loadAllProducts();
