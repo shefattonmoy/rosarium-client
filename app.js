@@ -90,7 +90,7 @@ const displayAllProducts = (allProducts) => {
           </p>
           <p class="card-text fw-semibold"> Price: $${product.price}
           </p>
-          <button class="btn btn-primary"><a href="allProductsDetails.html?productId=${product.id}" target="_blank" class="text-white">Details</a></button>
+          <button class="btn btn-primary"><a href="allProductsDetails.html?productId=${product.id}" class="text-white">Details</a></button>
         </div>
       </div>
     `;
@@ -179,7 +179,7 @@ const displayReviews = (reviews) => {
     <div class="card shadow h-100">
                 <div class="ratio ratio-4x3">
                   <img
-                    src=${review.reviewer_image}
+                    src="./images/ArronWelch.jpg"
                     class="card-img"
                     loading="lazy"
                     alt="..."

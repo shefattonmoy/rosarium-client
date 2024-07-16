@@ -8,7 +8,17 @@ li {
 }
 
 nav {
-    background-color: #878281;
+    background-color: #FFF;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+  nav a {
+    text-decoration: none;
+    color: inherit; 
 }
 
 .menu {
@@ -16,7 +26,7 @@ nav {
 }
 
 .menu:hover {
-    color: white;
+    color: #EB1741;
     cursor: pointer;
 }
 
