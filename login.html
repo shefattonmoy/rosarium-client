@@ -13,88 +13,70 @@
 </head>
 
 <body>
-        <!-- Navbar Section -->
-        <nav class="d-flex justify-content-around align-items-center p-2">
-            <div class="logo-container d-flex align-items-center gap-2">
-                <img src="./images/small_logo.png" alt="" />
-                <h3>Rosarium</h3>
-            </div>
-            <div class="menu-container d-flex gap-3">
-                <li class="menu"><a href="index.html">Home</a></li>
-                <li class="menu">Services</li>
-                <li class="menu">Contact us</li>
-                <li class="menu"><a href="login.html">Login</a></li>
-            </div>
-        </nav>
 
-        <!-- Banner Section -->
+    <!-- Navbar Section -->
 
-        <div class="banner">
-            <div class="content">
-                <h1>Login</h1>
-            </div>
+    <nav class="d-flex justify-content-around align-items-center p-2">
+        <div class="logo-container d-flex align-items-center gap-2">
+            <img src="./images/small_logo.png" alt="" />
+            <h3>Rosarium</h3>
         </div>
+        <div class="menu-container d-flex gap-4">
+            <li class="menu"><a href="index.html">Home</a></li>
+            <li class="menu">Services</li>
+            <li class="menu">Contact</li>
+            <li class="menu"><a href="login.html">Login</a></li>
+        </div>
+    </nav>
 
-        <!-- Login Form Section -->
-        
-        <div class="login-container">
-            <div class="col-md-6">
-              <form action="">
-                <input
-                  id="login-username"
-                  type="text"
-                  class="input"
-                  placeholder="Username"
-                  required
-                />
-                <br>
-                <input
-                  id="login-password"
-                  type="password"
-                  class="input"
-                  placeholder="Password"
-                  required
-                />
+    <!-- Login Form Section -->
+
+    <div class="login-container">
+        <div class="col-6">
+            <div class="image-container">
+                <img class="w-full" src="./images/login.png" alt="Login Image" />
+            </div>
+            <form class="login-form">
+                <h2>Login</h2>
+                <input id="login-username" type="text" class="input" placeholder="Username" required />
+                <input id="login-password" type="password" class="input" placeholder="Password" required />
                 <button onclick="handleLogin(event)" class="submit-btn">Login</button>
                 <p><a href="registration.html">Go to Registration Page</a></p>
-              </form>
-            </div>
-            <div class="col-md-6">
-              <img class="w-100" src="./images/login.png" alt="" />
-            </div>
-          </div>
-
+            </form>
+        </div>
+    </div>
+    
     <!-- Footer Section -->
+
     <footer class="p-5">
         <div class="container w-75 m-auto row p-5">
-            <div class="col-md-6">
-                <p><small>Copyright © Rosarium. All Rights Reserved</small></p>
-                <h5>Follow US</h5>
-                <div class="icons">
-                    <img class="icon" src="./images/LinkedIn.png" alt="" />
-                    <img class="icon" src="./images/YouTube.png" alt="" />
-                </div>
+          <div class="col-md-6">
+            <h5>Follow Us</h5>
+            <div class="icons">
+              <img class="icon" src="./images/LinkedIn.png" alt="" />
+              <img class="icon" src="./images/YouTube.png" alt="" />
             </div>
-            <div class="col-md-3">
-                <h5>Company</h5>
-                <li>About</li>
-                <li>Contact us</li>
-                <li>Culture</li>
-                <li>Blog</li>
-            </div>
-            <div class="col-md-3">
-                <h5>Company</h5>
-                <li>About</li>
-                <li>Contact us</li>
-                <li>Culture</li>
-                <li>Blog</li>
-            </div>
+          </div>
+          <div class="col-md-3">
+            <h5>Company</h5>
+            <li>About</li>
+            <li>Contact us</li>
+            <li>Culture</li>
+            <li>Blog</li>
+          </div>
+          <div class="col-md-3">
+            <h5>Quick Links</h5>
+            <li>YouTube</li>
+            <li>Facebook us</li>
+            <li>LinkedIn</li>
+            <li>X</li>
+          </div>
         </div>
         <hr />
         <p class="text-center mt-3">
-            <small>Copyright © Rosarium. All Rights Reserved</small>
+          <small>Copyright © Rosarium. All Rights Reserved.</small>
         </p>
-    </footer>
+      </footer>
 
     <script src="./app.js"></script>
     <script src="./auth.js"></script>
