@@ -49,7 +49,6 @@ const handleLogin = (event) => {
   event.preventDefault();
   const username = getValue("login-username");
   const password = getValue("login-password");
-  console.log(username, password);
   if ((username, password)) {
     fetch("https://rosarium-server.onrender.com/customer/login/",
        {
@@ -59,8 +58,6 @@ const handleLogin = (event) => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
-
         if (data.token && data.user_id) {
           localStorage.setItem("token", data.token);
           localStorage.setItem("user_id", data.user_id);

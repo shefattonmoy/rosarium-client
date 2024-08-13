@@ -19,7 +19,7 @@ const displayDetails = (product) => {
             <p>Color: ${product.color}</p>
             <p>Category: ${product.category}</p>
             <h4>Price: $${product.price}</h4>
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Buy Now</button>
+            <button type="button" class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Buy Now</button>
         </div>
     `;
     parent.appendChild(div);
